@@ -7,5 +7,6 @@ node {
         myTest{
             hello = 'hello'
         }
+        sh 'echo "Hello!!"'
     }
 }
