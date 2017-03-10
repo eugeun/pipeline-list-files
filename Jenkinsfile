@@ -4,7 +4,7 @@ node {
     stage("Show Files") {
         checkout scm
         def xml_files = findFiles(glob: '**/*.xmlt')
-        echo "${xml_files}"
+        echo "${xml_files.size()}"
         for (xml_file in xml_files) {
             echo "${xml_file}"
         }
