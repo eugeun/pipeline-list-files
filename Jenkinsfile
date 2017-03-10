@@ -3,8 +3,8 @@
 node {
     stage("Show Files") {
         checkout scm
-        List<File> xml_files_list = new File(".").listFiles("*.xml").findAll()
-        for (xml_file in xml_files_list) {
+        def xml_files = findFiles(glob: '**/*.xml')
+        for (xml_file in xml_files) {
             echo xml_file
         }
     }
