@@ -3,10 +3,9 @@
 node {
     stage("Show Files") {
         checkout scm
-        sh 'ls'
-        myTest{
-            hello = 'hello'
+        List<File> xml_files_list = new File(".").listFiles("*.xml").findAll()
+        for (xml_file in xml_files_list) {
+            echo xml_file
         }
-        sh 'echo "Hello!!"'
     }
 }
